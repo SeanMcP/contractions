@@ -1,6 +1,4 @@
-# Node
-node_modules/
+/node_modules/
+/public/build/
 
-# Parcel
-.cache/
-dist/
+.DS_Store
