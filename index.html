@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contractions</title>
-    <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
     <main>
+      <header>
         <h1>Contractions</h1>
-        <table>
-            <thead>
-                <th>Rating</th>
-                <th>Time</th>
-                <th>Length</th>
-                <th>Timing</th>
-                <th class="visually-hidden">Delete</th>
-            </thead>
-            <tbody id="record"></tbody>
-        </table>
-        <section id="timer"></section>
-        <a href="./" id="start">Start</a>
-        <a href="./" id="stop">Stop</a>
+      </header>
+      <table id="table" hidden>
+        <thead>
+          <th>Rating</th>
+          <th>Time</th>
+          <th>Length</th>
+          <th>Timing</th>
+          <th>
+            <span class="visually-hidden">Delete</span>
+          </th>
+        </thead>
+        <tbody id="record"></tbody>
+      </table>
+      <p id="description">
+        It's go time! Hit <b>Start</b> to begin tracking your transactions. (And remember your breathing!)
+      </p>
+      <p class="clear-container">
+        <a class="button--ghost" hidden href="./" id="clear">Clear all</a>
+      </p>
+      <footer>
+        <div class="content">
+          <section id="timer">00:00</section>
+          <a href="./" id="start">Start</a>
+          <a href="./" id="stop">Stop</a>
+        </div>
+      </footer>
     </main>
-</body>
-<script src="./setup.js"></script>
-<script src="./main.js"></script>
+  </body>
+  <script src="./setup.js"></script>
+  <script src="./main.js"></script>
 </html>

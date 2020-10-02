@@ -27,21 +27,155 @@ textarea {
 
 /* == END BASE == */
 
+:root {
+  --gray050: hsl(220, 6%, 5%);
+  --gray100: hsl(220, 6%, 10%);
+  --gray200: hsl(220, 6%, 20%);
+  --gray300: hsl(220, 6%, 30%);
+  --gray400: hsl(220, 6%, 40%);
+  --gray500: hsl(220, 6%, 50%);
+  --gray600: hsl(220, 6%, 60%);
+  --gray700: hsl(220, 6%, 70%);
+  --gray800: hsl(220, 6%, 80%);
+  --gray900: hsl(220, 6%, 90%);
+  --gray950: hsl(220, 6%, 95%);
+
+  --off-black: var(--gray050);
+  --off-white: var(--gray950);
+
+  --blue: hsl(220, 70%, 44%);
+  --dark-blue: hsl(220, 74%, 33%);
+}
+
+:root {
+  --alternate-row: var(--off-white);
+}
+
+body {
+  color: var(--gray100);
+}
+
+main,
+.content {
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+main {
+  margin-bottom: 8rem;
+}
+
+header {
+  padding: 0.5rem;
+}
+
+header h1 {
+  margin: 0;
+}
+
+#description {
+  line-height: 1.5;
+  padding: 0 0.5rem;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 87.5%;
+  text-align: center;
+  width: 100%;
+}
+
+td,
+th {
+  padding: 0.25rem;
+}
+
+th {
+  /* font-size: 87.5%; */
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+tbody tr:nth-child(odd) td {
+  background-color: var(--alternate-row);
+}
+
 select {
-  border: 1px solid black;
-  border-radius: 0.25rem;
+  background-color: transparent;
+  border: none;
   padding: 0.25rem;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 
-table {
-    width: 100%;
+.button--ghost {
+  background-color: transparent;
+  border: none;
+  border-radius: 0.25rem;
+  color: inherit;
+  padding: 0.25rem;
+  text-decoration: none;
 }
 
-th {
-    font-size: 87.5%;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+.button--ghost:focus,
+.button--ghost:hover {
+  background-color: hsla(0, 0%, 0%, 10%);
+}
+
+.clear-container {
+  text-align: center;
+}
+
+footer {
+  bottom: 0;
+  box-shadow: 0 0 3rem var(--gray800), 0 0 1rem var(--gray900);
+  display: grid;
+  gap: 0.5rem;
+  left: 0;
+  right: 0;
+  padding: 0.5rem;
+  position: fixed;
+  text-align: center;
+}
+
+section#timer {
+  font-feature-settings: "tnum";
+  font-size: 4rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 300;
+}
+
+footer a {
+  background-color: var(--blue);
+  border-radius: 0.25rem;
+  color: white;
+  display: block;
+  font-weight: bold;
+  padding: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+*[hidden] {
+  display: none !important;
+}
+
+/* Desktop */
+@media screen and (min-width: 600px) {
+  table {
+    font-size: 100%;
+  }
+
+  tbody tr td:first-child {
+    border-bottom-left-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
+  }
+
+  tbody tr td:last-child {
+    border-bottom-right-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
 }

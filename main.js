@@ -36,6 +36,10 @@
     ]);
   });
 
+  el.clear.addEventListener('click', () => {
+    Store.setData([])
+  })
+
   function changeRating(stop, rating) {
     const data = Store.getData();
     const next = data.map((entry) => {
@@ -61,6 +65,12 @@
   function renderRecord() {
     const reverseChron = Store.getData().reverse();
     el.record.innerHTML = "";
+
+    if (reverseChron.length > 0) {
+      el.clear.removeAttribute('hidden')
+      el.description.hidden = true;
+      el.table.removeAttribute('hidden')
+    }
 
     reverseChron.forEach((entry, i) => {
       const last = reverseChron[i + 1];
@@ -104,7 +114,7 @@
 
       const frequencyCell = document.createElement("td");
       frequencyCell.textContent = last
-        ? formatDuration(start - parseInt(last.stop))
+        ? formatDuration(start - parseInt(last.start))
         : "First";
       row.appendChild(frequencyCell);
 
@@ -112,6 +122,7 @@
       const deleteButton = document.createElement("button");
       deleteButton.textContent = "🗑";
       deleteButton.setAttribute('aria-label', 'Delete')
+      deleteButton.classList.add('button--ghost')
       deleteButton.addEventListener("click", () => {
         deleteEntry(stop);
         renderRecord();

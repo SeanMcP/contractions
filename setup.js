@@ -46,9 +46,12 @@
 
   window._app = {
     el: {
+      clear: document.getElementById('clear'),
+      description: document.getElementById('description'),
       record: document.getElementById('record'),
       start: document.getElementById('start'),
       stop: document.getElementById('stop'),
+      table: document.getElementById('table'),
       timer: document.getElementById('timer')
     },
     formatDuration,
