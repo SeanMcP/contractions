@@ -63,7 +63,7 @@ main,
 }
 
 main {
-  margin-bottom: 8rem;
+  margin-bottom: 10rem;
 }
 
 header {
@@ -130,6 +130,7 @@ select {
 }
 
 footer {
+  background-color: white;;
   bottom: 0;
   box-shadow: 0 0 3rem var(--gray800), 0 0 1rem var(--gray900);
   display: grid;
