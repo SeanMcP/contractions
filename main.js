@@ -103,9 +103,9 @@
       const startCell = document.createElement("td");
       const startDate = new Date(start);
       const h = startDate.getHours();
-      startCell.textContent = `${h > 12 ? h - 12 : h}:${String(
+      startCell.textContent = `${h > 12 ? h - 12 : h === 0 ? 12 : h}:${String(
         startDate.getMinutes()
-      ).padStart(2, "0")}${h > 12 ? "pm" : "am"}`;
+      ).padStart(2, "0")}${h > 11 ? "pm" : "am"}`;
       row.appendChild(startCell);
 
       const lengthCell = document.createElement("td");
