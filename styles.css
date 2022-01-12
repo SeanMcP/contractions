@@ -102,6 +102,24 @@ tbody tr:nth-child(odd) td {
   background-color: var(--alternate-row);
 }
 
+tr {
+  position: relative;
+}
+
+tr[data-editing] {
+  outline: 2px solid var(--blue);
+  outline-offset: -2px;
+}
+
+/* Hide by default */
+/* tr:not([data-editing]) [data-field-edit], */
+tr:not([data-editing]) .actions-container {
+/* Hide when editing */
+/* tr[data-editing] [data-wrapped] */
+/* { */
+  display: none;
+}
+
 select {
   background-color: transparent;
   border: none;
@@ -125,12 +143,17 @@ select {
   background-color: hsla(0, 0%, 0%, 10%);
 }
 
+.actions-container {
+  position: absolute;
+  right: 0;
+}
+
 .clear-container {
   text-align: center;
 }
 
 footer {
-  background-color: white;;
+  background-color: white;
   bottom: 0;
   box-shadow: 0 0 3rem var(--gray800), 0 0 1rem var(--gray900);
   display: grid;

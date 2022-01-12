@@ -44,6 +44,13 @@
     return new URLSearchParams(window.location.search).get("start");
   }
 
+  function wrapTextContent(node, textContent) {
+    const span = document.createElement('span')
+    span.dataset.wrapped = true
+    span.textContent = textContent
+    node.appendChild(span)
+  }
+
   window._app = {
     el: {
       clear: document.getElementById('clear'),
@@ -59,5 +66,6 @@
     getStart,
     Store,
     timerInterval: null,
+    wrapTextContent,
   };
 })();
